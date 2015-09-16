@@ -58,7 +58,7 @@ class CybEmailFrom
     
     public function add_admin_menu()
     {
-        add_submenu_page( 'options-general.php', __( 'Email parameters', 'cyb-email' ), __( 'Email parameters', 'cyb-email' ), 'manage_options', 'cyb_email', array( $this, 'menu_html' ) );
+        add_submenu_page( 'options-general.php', __( 'Email parameters', 'cyb-email-from' ), __( 'Email parameters', 'cyb-email-from' ), 'manage_options', 'cyb_email', array( $this, 'menu_html' ) );
     }
     
     public function menu_html()
@@ -80,13 +80,13 @@ class CybEmailFrom
         
         add_settings_section( 'cyb_email_section', '', array( $this, 'section_html' ), 'cyb_email_settings' );
         
-        add_settings_field( 'cyb_email_url', __( 'Email of the sender', 'cyb-email' ), array( $this, 'email_html' ), 'cyb_email_settings', 'cyb_email_section' );
-        add_settings_field( 'cyb_email_name', __( 'Name of the sender', 'cyb-email' ), array( $this, 'name_html' ), 'cyb_email_settings', 'cyb_email_section' );
+        add_settings_field( 'cyb_email_url', __( 'Email of the sender', 'cyb-email-from' ), array( $this, 'email_html' ), 'cyb_email_settings', 'cyb_email_section' );
+        add_settings_field( 'cyb_email_name', __( 'Name of the sender', 'cyb-email-from' ), array( $this, 'name_html' ), 'cyb_email_settings', 'cyb_email_section' );
     }
     
     public function section_html()
     {
-        _e('Complete the parameters for the emails sent by your website.', 'cyb-email' );
+        _e('Complete the parameters for the emails sent by your website.', 'cyb-email-from' );
     }
     
     public function email_html()
